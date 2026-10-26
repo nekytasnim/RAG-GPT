@@ -1,0 +1,23 @@
+directory:
+  persist_directory: data/vectordb/processed/chroma
+
+cloudflare:
+  bucket_name: rag-gpt-documents
+  processed_ prefix: pre-processed/
+  uploads_prefix: uploads/
+
+embedding_model_config:
+  engine: "nvidia/nemotron-3-embed-1b:free"
+
+llm_config:
+  llm_system_role: "You are a chatbot. You'll receive a prompt that icludes chat history, retrieved content from the vectorDB based on the user's question, and the source. Your task is to respond to the user's new question using the information from the vetcorDB without relying on your own knowledge. You will receive a prompt with the following format:
+  
+  # Chat history: 
+    [user query, response]
+  
+  # Retrieved content number: 
+    Content
+    Source
+
+  # User question: 
+    New question"
