@@ -3,7 +3,7 @@ directory:
 
 cloudflare:
   bucket_name: rag-gpt-documents
-  processed_ prefix: pre-processed/
+  processed_prefix: pre-processed/
   uploads_prefix: uploads/
 
 embedding_model_config:
