@@ -21,3 +21,22 @@ llm_config:
 
   # User question: 
     New question"
+  engine: "openai/gpt-oss-120b:free"
+  temperature: 0.0
+
+summarizer_config:
+  max_final_token: 3000
+  character_overlap: 100
+  token_threshold: 0
+  summarizer_llm_system_role: "You are an expert text summarizer. You wil receive a text and your task is to summarize and keep all the ley information. Keep the maximum length of summary within {} number of tokens."
+  final_summarizer_llm_system_role: "You are an expert text summarizer. You will receive a text and your task is to give a comprehensive sumary and keep all the key information."
+
+splitter_config:
+  chunk_size: 1500
+  chunk_overlap: 500
+
+retrieval_config:
+  k: 3
+
+memory:
+  number_of_q_a_pairs: 2
