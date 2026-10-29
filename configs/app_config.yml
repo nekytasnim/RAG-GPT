@@ -4,7 +4,7 @@ directory:
 cloudflare:
   bucket_name: rag-gpt-documents
   processed_prefix: pre-processed/
-  uploads_prefix: uploads/
+  uploads_prefix: uploaded/
 
 embedding_model_config:
   engine: "nvidia/nemotron-3-embed-1b:free"
