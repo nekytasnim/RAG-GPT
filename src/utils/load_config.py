@@ -1,5 +1,4 @@
 import os
-import shutil
 import yaml
 from dotenv import load_dotenv
 from openai import OpenAI
