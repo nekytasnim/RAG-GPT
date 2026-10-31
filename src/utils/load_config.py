@@ -10,7 +10,7 @@ load_dotenv()
 class LoadConfig:
   def __init__(self) -> None:
     with open(here("configs/app_config.yml")) as cfg:
-      app_config = yaml.load(cfg, yaml.FullLoader())
+      app_config = yaml.load(cfg, Loader=yaml.FullLoader)
 
     # LLM configs
     self.llm_engine: str = app_config['llm_config']['engine']

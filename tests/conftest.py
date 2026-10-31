@@ -25,7 +25,7 @@ def mock_openai_client(mock_llm_response: MagicMock) -> MagicMock:
 def mock_vectordb() -> MagicMock:
   doc = MagicMock()
   doc.page_content = "Sample retrieved content"
-  doc.metdata = {"source": "test.pdf", "page": 1}
+  doc.metadata = {"source": "test.pdf", "page": 1}
   db = MagicMock()
-  db.similarity_search.return_value = doc
+  db.similarity_search.return_value = [doc]
   return db
