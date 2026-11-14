@@ -7,6 +7,7 @@ import boto3
 load_dotenv()
 
 class R2Storage:
+  """Manage PDF files stored in Cloudflare R2"""
   def __init__(
       self,
       bucket_name: str,
