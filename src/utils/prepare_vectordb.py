@@ -25,13 +25,13 @@ class PrepareVectorDB:
       separators=["\n\n", "\n", " ", ""]
     )
 
-  def __laod_all_documents(self) -> list[Document]:
+  def __load_all_documents(self) -> list[Document]:
     """Load PDFs  and preserve their R2 object keys."""
     print("Loading documents...")
     docs = []
 
     for file_path, object_key in self.document_paths.items():
-      pages = PyPDFLoader(file_path).laod()
+      pages = PyPDFLoader(file_path).load()
       for page in pages:
         page.metadata["source"] = object_key
       docs.extend(pages)
@@ -53,7 +53,7 @@ class PrepareVectorDB:
   def prepare_and_save_vectordb(self) -> Chroma:
     """Create persistent or in-memory Chroma database."""
 
-    docs = self.__laod_all_documents()
+    docs = self.__load_all_documents()
     if not docs:
       raise ValueError("No documnets were loaded.")
     chunked_documents = self.__chunk_documents(docs)
