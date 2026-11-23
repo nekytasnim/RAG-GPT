@@ -41,7 +41,8 @@ class LoadConfig:
       model=self.embedding_model_engine,
       openai_api_key=os.getenv('OPENROUTER_API_KEY'),
       openai_api_base='https://openrouter.ai/api/v1',
-      check_embedding_ctx_length=False
+      check_embedding_ctx_length=False,
+      chunk_size=256
     )
 
     # Summarizer config
