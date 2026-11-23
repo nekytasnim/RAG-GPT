@@ -48,7 +48,7 @@ class R2Storage:
     destination = Path(destination_path)
     destination.parent.mkdir(parents=True, exist_ok=True)
 
-    self.client.downlaod_file(
+    self.client.download_file(
       Bucket=self.bucket_name,
       Key=object_key,
       Filename=str(destination)
